@@ -12,7 +12,7 @@ client = TestClient(app)
 #assert means this must be true or fail the test
 def test_create_task():
     response = client.post("/tasks", json={"title": "Buy milk"})
-    assert response.status_code == 999
+    assert response.status_code == 201
     data = response.json()
     assert data["title"] == "Buy milk"
     assert data["completed"] == False
